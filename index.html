@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./lib/css/app.css">
+    <link rel="shortcut icon" href="./lib/images/def_favicon.png" type="image/x-icon">
+    <script src="./lib/js/jquery-3.6.4.min.js"></script>
+    <script src="./lib/js/jquery-ui.min.js"></script>
+    <title>Bloggie CMS Documentation</title>
+</head>
+<body class="grid grid-cols-5 relative">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-span-1 h-screen bg-gradient-to-b from-indigo-500 via-indigo-700 to-blue-700 sticky left-0 top-0 overflow-y-scroll scroll-smooth">
+        <!-- Logo -->
+        <div class="flex items-center py-2 px-5 justify-center">
+            <img src="./lib/images/logo-dark.png" alt="bloggie-cms-logo" class="w-10 drop-shadow-md">
+            <p class="ml-3 text-3xl font-semibold drop-shadow-sm text-white">Bloggie CMS</p>
+        </div>
+        <!-- Aside Links -->
+        <aside class="px-5 py-3 ">
+            <!-- Section 1 -->
+            <div class="py-2">
+                <!-- Label -->
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">1. Getting Started</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <!-- Hide Section -->
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#package_included">Package Included</a></li>
+                </ul>
+            </div>
+            <!-- Section 2 -->
+            <div class="py-2">
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">2. Deployment to Server</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#requirements">Requirements & PHP Configuration</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#local_server">Local Server</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#live_server">Live Server</a></li>
+                </ul>
+            </div>
+            <!-- Section 3 -->
+            <div class="py-2">
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">3. CMS Installation</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#cms_installation">Initialize Setup</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#requirement_check">Checking Permission</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#database_setup">Database Setup</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#master_account">Master Account</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#install_now">Finalize</a></li>
+                </ul>
+            </div>
+            <!-- Section 4 -->
+            <div class="py-2">
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">4. Admin Panel Walkthrough</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_dashboard">Dashboard</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_posts">All Posts</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_create_post">Create Post</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_post_trash">Posts Trash</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_reports">Reports</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_categories">Categories</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_comments">Comments</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#admin_file_manager">File Manager</a></li>
+                </ul>
+            </div>
+            <!-- Section 5 -->
+            <div class="py-2">
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">5. Settings</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#settings_app">Application</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#settings_appearance">Appearance</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#settings_blog_items">Blog Items</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#settings_advanced">Advanced</a></li>
+                </ul>
+            </div>
+            <!-- Section 6 -->
+            <div class="py-2">
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">6. CMS Tools</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#cms_backups">Backups</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#cms_sitemap">Sitemap</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#cms_cache_management">Cache Management</a></li>
+                </ul>
+            </div>
+            <!-- Section 7 -->
+            <div class="py-2">
+                <div class="flex items-center justify-between cursor-pointer" onclick="$(this).next('ul').toggle('blind', { easing: 'easeOutBounce', duration: 1000 });">
+                    <p class="text-lg tracking-wider text-white">7. Additional Configuration</p>
+                    <div>
+                        <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+                    </div>
+                </div>
+                <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#additional_google_analytics">Google Analytics</a></li>
+                    <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#additional_sitemap">Sitemap</a></li>
+                </ul>
+            </div>
+        </aside>
+    </nav>
+    <!-- Main Content -->
+    <main class="col-span-4 px-10 py-5">
+        <!-- Header -->
+        <div class="text-center">
+            <h1 class="text-4xl font-bold">Bloggie CMS Documentation</h1>
+            <p class="tracking-wider">Author: <span class="font-semibold"><a href="">R Cube Dev</a></span></p>
+            <p class="text-sm">Version: <span class="font-semibold">v1.0</span> &mid;&mid; Last Updated: <span class="font-semibold">R Cube Dev</span> </p>
+            <p class="text-sm">Keep checking Online Documentation for regular updates: <a class="text-indigo-500 underline" target="_blank" href="https://bloggiedoc.rcubedev.in">Check Now</a></p>
+        </div>
+        <!-- Preface -->
+        <div class="mt-5">
+            <h2 class="text-3xl font-semibold">Preface</h2>
+            <div class="prose text-lg tracking-wide py-5">
+                <p>Welcome to the documentation for the Bloggie CMS, this document has been created to provide a comprehensive guide to the functionalities and featured of the Bloggie CMS.</p>
+                <p>The Bloggie CMS Project is a Content Management System designed to simplify the creation and management of content for websites. The Project is built using <b>TALL Stack (Tailwind, Alpine JS, Laravel, Livewire)</b>, and is intended to be used by developers and content creators alike.</p>
+                <p>This documentation is intended to serve as a reference guide for users of the Bloggie CMS. It includes information on the installation, configuration, and usage of the CMS. It is also designed to help developers extend and customise the project to meet their specific needs.</p>
+                <p>We hope that this documentation will be a valuable resource for all users of the Bloggie CMS. Do you have any questions or feedback? Please don’t hesitate to reach out to us. Thank you for choosing the Bloggie CMS and we hope that you find this documentation helpful.</p>
+            </div>
+            <img src="./lib/images/main.png"  alt="main-cover" class="object-cover w-full h-full rounded-lg">
+        </div>
+        <!-- 1. Getting Started -->
+        <section id="getting_started" class="mt-5">
+            <h2 class="text-3xl font-semibold">1. Getting Started</h2>
+            <div class="prose text-lg tracking-wide py-5">
+                <p>We would like to thank you for purchasing Bloggie CMS, We are very pleased that you have chosen Bloggie CMS for your Content Management System, you will never be disappointed!</p>
+                <p>Before you get started, please be sure to Before you get started, please be sure to checkout this documentation we outlined all kinds of required information provided with all the details you need to use Blogger CMS.</p>
+                <p>If you are unable to find your answer here in our documentation, encourage you to contact us. Currently we provide support only through our email <a href="mailto:rcubedev20@gmail.com" class="!text-indigo-500 font-bold">rcubedev20@gmail.com</a>. Don't worry, you will get reply from us more faster than you expected, all you need to do is to mention your problem as clearly as possible, attach some screenshots for your reference.</p>
+                <p>Thank you, we hope you enjoy using Bloggie CMS.</p>
+            </div>
+            <div class="prose text-lg tracking-wide">
+                <div id="package_included" class="pb-2">
+                    <h3 class="text-xl font-semibold mb-2">Package Included</h3>
+                    <ul>
+                        <li class="ml-3">&#9679 <span class="ml-3">Bloggie CMS Project zip file.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Bloggie CMS Documentation.</span></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+        <!-- 2. Uploading to Server -->
+        <section id="deployment" class="mt-5">
+            <h2 class="text-3xl font-semibold">2. Deployment to Server</h2>
+            <div id="requirements" class="">
+                <h3 class="text-xl font-semibold py-4">Requirements & PHP Configuration</h3>
+                <ul class="prose text-lg tracking-wide">
+                    <li class="ml-3">&#9679 <span class="ml-3">Minimum PHP Version is <b>8.0</b></span></li>
+                    <li class="mt-4"><b>Note:</b> Many issues are all related to low PHP configuration limits. The solution is to increase the PHP limits. You can do this on your own or contact your web host and ask them to increase those limits to a minimum as follows;</li>
+                    <li class="ml-3">&#9679 <span class="ml-3">max_execution_time <b>300</b></span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">memory_limit <b>64M</b></span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">post_max_size <b>28M</b></span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">upload_max_filesize <b>12M</b></span></li>
+                </ul>
+            </div>
+            <div id="local_server">
+                <h3 class="text-xl font-semibold py-4">Local Server</h3>
+                <ul class="prose text-lg tracking-wide">
+                    <li class="ml-3">&#9679 <span class="ml-3">Create a Folder (any name you want), within 'htdocs' directory if you are using XAMMP or 'WWW' directory if you are using WAMP as development server.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Extract the <b>'bloggie_cms_prod.zip'</b>, then copy the contents into the folder you created.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Open up the <b>'.env'</b> file in your text editor (notepad).</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add your domain ex: http://rcube.test , now save it and Exit.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Head towards <b>'phpMyAdmin'</b>, and create a database, after that go to <b>'User Privileges'</b> and create a User with Password, don't go with default <b>root@no-password</b></b></span></li>
+                </ul>
+            </div>
+            <div id="live_server">
+                <h3 class="text-xl font-semibold py-4">Live Server</h3>
+                <ul class="prose text-lg tracking-wide">
+                    <li class="ml-3">&#9679 <span class="ml-3">Go the 'CPanel' of your Hosting Provider.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Use 'File Manager' and go to <b>public_html</b> directory.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Upload all the contents of <b>'bloggie_cms_prod.zip'</b>, in the 'public_html' directory.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Open up the <b>'.env'</b> file, if you cannot find .env files, it is dot files are hidden for security reasons. Check with your Hosting Provider to Unhide '.' (dot) files.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add your domain ex: https://rcube.dev/ . If SSL is not configured use http://. save and exit file manager.</span></li>
+                    <li class="ml-3">&#9679 <span class="ml-3">Create a Database using <b>phpMyAdmin</b>, provided in CPanel.</span></li>
+                </ul>
+                <p class="pt-5 prose text-lg tracking-wide text-gray-600"><b>Note:</b> You can also upload files to live server using any of the <b>FTP Client</b> like FileZilla.</p>
+            </div>
+        </section>
+        <!-- 3. CMS Installation -->
+        <section class="mt-5" id="cms_installation">
+            <h2 class="text-3xl font-semibold">3. CMS Installation</h2>
+            <p class="pt-5 prose text-lg tracking-wide text-gray-600">Bloggie CMS comes with Installation wizard, which takes care of installing and managing depedencies required for cms. This wizard take you through series of steps to make your CMS up and steady. Open up your browser and go to <b>www.yourdomain.com/install</b>, to begin the installation. Change yourdomain with your domain name.</p>
+            <div class="flex gap-5 py-5">
+                <div id="initialize">
+                    <span class="font-semibold text-slate-600">1. Intialize</span>
+                    <img src="./lib/images/1.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                </div>
+                <div id="requirement_check">
+                    <span class="font-semibold text-slate-600">2. Checks Permission;</span>
+                    <img src="./lib/images/2.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                    <span class="font-semibold text-slate-600">Note: if you found any extensions are missing, then contact your webmaster and ask them to enable particular extensions.</span>
+                </div>  
+            </div>
+            <div id="database_setup" class="py-5">
+                <div>
+                    <span class="font-semibold text-slate-600">3. Database Setup - make sure you created a database, and have credentials with you,</span>
+                    <img src="./lib/images/3.jpeg" alt="" class="object-cover rounded-lg shadow-sm w-[45rem]" >
+                </div>
+                <div class="flex gap-5 py-5">
+                    <div class="py-3">
+                        <span class="font-semibold text-slate-600">4. If your creadentials match and CMS is connected with database then you will see this, kindly refresh the page</span>
+                        <img src="./lib/images/3a.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                    </div>
+                    <div class="py-3">
+                        <img src="./lib/images/4.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                        <span class="font-semibold text-slate-600">Next you will see this successfull screen.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-5" id="master_account">
+                <div class="py-3">
+                    <span class="font-semibold text-slate-600">5. This will ask you to create a Master Account, which is used to logging in to CMS Admin Panel.</span>
+                    <img src="./lib/images/5.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                </div>
+                <div class="">
+                    <img src="./lib/images/6.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                    <span class="font-semibold text-slate-600">Next you will see this successfull screen.</span>
+                </div>
+            </div>
+            <div class="flex gap-5" id="install_now">
+                <div class="py-3">
+                    <span class="font-semibold text-slate-600">6. After all checks, click on the 'Install Now' button to begin Installation.</span>
+                    <img src="./lib/images/7.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                </div>
+                <div class="">
+                    <img src="./lib/images/8.jpeg" alt="" class="object-cover rounded-lg shadow-sm" >
+                    <span class="font-semibold text-slate-600">Next you will see this Installation successfull screen. After which you will be redirected to login screen</span>
+                </div>
+            </div>
+        </section>
+        <!-- 4. Admin Panel Walkthrough -->
+        <section class="mt-5" id="admin_walkthrough">
+            <h2 class="text-3xl font-semibold">4. Admin Panel Walkthrough</h2>
+            <p class="pt-5 prose text-lg tracking-wide text-gray-600">This section will walkthrough you every feature & sections inside admin panel. After you successfully login you will come up with Admin Dashboard Page.</p>
+            <div class="py-5" id="admin_dashboard">
+                <h3 class="text-xl font-semibold mb-2">Dashboard</h3>
+                <img src="./lib/images/dashboard.jpeg" alt="admin_dashboard" class="w-full object-cover rounded-lg shadow-5" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p><b>1. Side Navbar:</b> makes it easy for the end user to navigate through the different sections of the admin panel and find the features they need. It also helps to organize the different sections into logical groups, making it easier for the user to understand how the system is structured.</p>
+                    <p><b>2. Maintainence Mode:</b> allows website owners to temporarily take their site offline for updates or maintenance. During this time, visitors are typically shown a message explaining that the site is temporarily unavailable and will be back online.</p>
+                    <p><b>3. Visit Site:</b>  open your site in new tab.</p>
+                    <p><b>4. Open Notifications: </b> Notification pane to show up notifications of your site;</p>
+                    <p><b>5. Toggle Dark Mode:</b> Bloggie CMS comes with light and dark mode, for both end user and admin too.</p>
+                    <p><b>6. Breadcrumbs: </b> a navigation aid that displays the user's current location within a application. Displays a trail of links that the user has followed to arrive at their current location.</p>
+                </div>
+            </div>
+            <div class="py-5" id="admin_posts">
+                <h3 class="text-xl font-semibold mb-2">All Posts</h3>
+                <img src="./lib/images/post_index.jpeg" alt="post_index" class="w-full object-cover rounded-lg shadow-5" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p><b>1. Create a Post:</b> button to create a new post.</p>
+                    <p><b>2. Search for Posts: </b>search among the posts by keywords</p>
+                    <p><b>3. Filter Posts: </b>various filters to sort the posts table.</p>
+                    <p><b>4. Toggle Visibility: </b>change visibility of post.</p>
+                    <p><b>5. Edit or Delete: </b>Edit button to edit and update the post, or Delete button to send the post to trash.</p>
+                    <p><b>6. Pagination: </b>Number of posts per page.</p>
+                    <p><b>7. Notifications: </b>A notifier for user.</p>
+                    <p><b>8. Multi Select: </b>Select mass number of posts to delete at once.</p>
+                </div>
+            </div>
+            <div class="py-5" id="admin_create_post">
+                <h3 class="text-xl font-semibold mb-2">Create Posts</h3>
+                <div class="grid grid-cols-2 gap-4">
+                <img src="./lib/images/post_form.jpeg" alt="post_form" class="col-span-1 w-[40rem] object-cover rounded-lg shadow-5" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p><b>1. Post title: </b>A good post title should be attention-grabbing, concise, and descriptive, giving readers a clear idea of what the content is about.</p>
+                    <p><b>2. Post Content: </b>A good post content should be clear and precise and encourage readers to continue reading. Text box is powered by <a href="https://ckeditor.com/ckeditor-5/">CKEditor 5</a>  read more about it in docs, you can also copy image links directly into box to add image.</p>
+                    <p><b>3. Thumbnails: </b>are an important visual element of many types of content, helping to improve engagement and provide a better user experience.</p>
+                    <p><b>4. Categories: </b>organizing and grouping similar content on a website or blog. They allow users to easily navigate and find content that is relevant to their interests.</p>
+                    <p><b>5. Tags: </b>a method of labeling and organizing content on a website or blog. They are typically used to provide additional context or information about the content, and to help users find related content more easily.</p>
+                    <p><b>6. Featured: </b> content refers to specific pieces of content, such as articles, blog posts, or videos, that are highlighted or promoted on a website or platform.</p>
+                    <p><b>7. SEO Title: </b> The SEO title is an important element of on-page search engine optimization, as it helps search engines and users understand what the page is about and can influence the page's ranking in search engine results.</p>
+                    <p><b>8. SEO Description: </b>An SEO description, also known as a meta description or description tag, is a brief summary or snippet of text that describes the content of a web page.</p>
+                    <p>Note: Bloggie CMS, is built by keeping an eye on SEO, by following best practice which will eventually help in ranking higher; To improve your results learn how to write a good meta title, meta description with good keywords. Also, for meta iamge your uploaded thumbnail minified version will be used.</p>
+                </div>
+                </div>
+            </div>
+            <div class="py-5" id="admin_post_trash">
+                <h3 class="text-xl font-semibold mb-2">Posts Trash Bin</h3>
+                <img src="./lib/images/post_trash_bin.jpeg" alt="post_trash" class="object-cover rounded-lg shadow-5" >
+            </div>
+            <div class="py-5" id="admin_reports">
+                <h3 class="text-xl font-semibold mb-2">Reports</h3>
+                <img src="./lib/images/reports.jpeg" alt="post_reports" class="object-cover rounded-lg shadow-5" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p>The list of posts reported by users, on yout posts. You can review them or delete them.</p>
+                </div>
+            </div>
+            <div class="py-5" id="admin_categories">
+                <h3 class="text-xl font-semibold mb-2">Categories</h3>
+                <img src="./lib/images/categories.jpeg" alt="categories" class="object-cover rounded-lg shadow-5" >
+            </div>
+            <div class="py-5" id="admin_comments">
+                <h3 class="text-xl font-semibold mb-2">Comments</h3>
+                <img src="./lib/images/comments.jpeg" alt="admin_comments" class="object-cover rounded-lg shadow-5" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p>Check Comments, on which post you got comments and by whom. Also, you can approve or disapprove comments. </p>
+                </div>
+            </div>
+            <div class="py-5 relative" id="admin_file_manager">
+                <h3 class="text-xl font-semibold mb-2">File Manager</h3>
+                <img src="./lib/images/file_manager.jpeg" alt="file_manager" class="object-cover rounded-lg shadow-5 w-[45rem]" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p><b>1. </b>Create a New Folder in the current directory.</p>
+                    <p><b>2. </b>Create a zip archive of the selected files and folders.</p>
+                    <p><b>3. </b>Download the selected files and folders, all in a single zip file.</p>
+                    <p><b>4. </b>Delete bulk files and folders</p>
+                    <p><b>5. </b>Rename a file or folder.</p>
+                </div>
+            </div>
+        </section>
+        <!-- 5. Settings -->
+        <section id="settings" class="mt-5">
+            <h2 class="text-3xl font-semibold">5. Settings</h2>
+            <p class="pt-5 prose text-lg tracking-wide text-gray-600">This section will guide you through the settings of admin panel. To maintain a structure, the settings are divided into <b>App, Appearance, Blog Items, Advanced</b>. All contains respective and important settings.</p>
+            <div class="py-5" id="settings_app">
+                <h3 class="text-xl font-semibold mb-2">App Settings</h3>
+                <img src="./lib/images/settings_app.jpeg" alt="app_settings" class="w-[45rem] mr-5 object-cover rounded-lg shadow-5 float-left" >
+                <div class="mt-5 prose text-lg tracking-wide clear-right">
+                    <p><b>1. Site Name:</b> Name you want to give to your Site</p>
+                    <p><b>2. Site Description:</b> A short description on what you site is about, it is also used in seo of your site.</p>
+                    <p><b>3. Site Logos:</b> Obviously you must have prepared some logo for site, that goes here.</p>
+                    <p><b>4. Site Dark Logo:</b> Fully Optional, if you made a different logo for dark scheme, upload it here.</p>
+                    <p><b>5. Site Favicon:</b> A small logo shown in tabs. It is recommened to have one.</p>
+                    <p><b>6. Timezone:</b> Your timezone;</p>
+                    <p><b>7. Admin Email:</b> Bloggie CMS will report you about updates of your site, or information on Scheduled tasks failure;</p>
+                    <p><b>8. Footer Text:</b> The text which is appeared on footer of the site.</p>
+                    <p><b>9. Site Maintainence:</b> Toggle this when you want make changes to site and which may effect readers experience, to redirect them to maintainence page.</p>
+                </div>
+            </div>
+            <div class="py-5" id="settings_appearance">
+                <h3 class="text-xl font-semibold mb-2">Appearance Settings</h3>
+                <img src="./lib/images/settings_appearance.jpeg" alt="app_settings" class="w-[45rem] ml-5 object-cover rounded-lg shadow-5 float-right" >
+                <div class="mt-5 prose text-lg tracking-wide clear-left">
+                    <p><b>1. Site Color:</b> This option is only act ascent color which will color your icons and border coloring.</p>
+                    <p><b>2. Custom CSS & Custom JS:</b> These both options are very advanced, must only be advanced if it is really required.</p>
+                    <p><b>Note:</b> To be honest with I was planning to create custom Themes for every types of need, where user can upload theme, and activate them. In next update you might be get lots of options for customization.</p>
+                </div>
+            </div>
+            <div id="settings_blog_items" class="py-5 clear-right">
+                <h3 class="text-xl font-semibold mb-2">Blog Items Settings</h3>
+                <img src="./lib/images/settings_blogitems.jpeg" alt="app_settings" class="w-[45rem] mr-5 object-cover rounded-lg shadow-5 float-left" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p>These settings include some frontend settings, and widgets settings.</p>
+                    <p><b>1. Default Category:</b> Must select one, when you post something without a category, the default will be assigned to this post, Bloggie CMS provides 'Uncategorized' as default, you can create one select that here.</p>
+                    <p><b>2. Fetured Post:</b> Option to show or hide this widget in fronted, this sticks to the top the homepage, you can customize no of featured posts to show.</p>
+                    <p><b>3. Post Description: </b> You might be thinking what is this option about, this is for the 'post description' inside card UI, the text to be shown in frontend blog post cards.</p>
+                    <p><b>4. Some Widget Options: </b>There are some widget comes with the default theme, <b>Recet Posts, Popular Posts and Related Posts</b>. Change the number of posts to shown in frontend.</p>
+                    <p><b>5. Pages Related Otions: </b> This option is make pages with sidebar or full width, this option is not currently useful as the default theme uses full-width without sidebar.</p>
+                </div>
+            </div>
+            <div id="settings_advanced" class="py-5 clear-left">
+                <h3 class="text-xl font-semibold mb-2">Advanced Settings</h3>
+                <img src="./lib/images/settings_advanced.jpeg" alt="app_settings" class="w-[45rem] ml-5 object-cover rounded-lg shadow-5 float-right" >
+                <div class="mt-5 prose text-lg tracking-wide clear-left">
+                    <div>
+                        <h4 class="font-medium">Google Analytics</h4>
+                        <p>This allows website owners to track website traffic and user behavior, which can be useful in optimizing the website's performance and user experience.</p>
+                        <p><b>Note:</b> How to setup Google Analytics is in different section <a href="#additional_configuration">'Aditional Configuration'</a>, is covered in details.</p>
+                    </div>
+                    <div class="mt-3">
+                        <h4 class="font-medium">SMTP Settings</h4>
+                        <p>SMTP (Simple Mail Transfer Protocol) is a standard protocol used to send email messages between servers. </p>
+                        <p>You need to configure SMTP in order to run some features, like Auto Backups and Scheduled as it will report you via email on success or failures;</p>
+                        <p>If you dont have SMTP service check some good options;</p>
+                        <ul class="prose text-slate-600">
+                            <li class="font-semibold">Mail Trap</li>
+                            <li class="font-semibold">Mail Gun - <span class="font-medium">My Personal choice, check more in 'Additional Configuration Settings.'</span></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            <div class="py-5 clear-right">
+                <img src="./lib/images/settings_advanced2.jpeg" alt="app_settings" class="w-[45rem] mr-5 object-cover rounded-lg shadow-5 float-left" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <div>
+                        <h4 class="font-medium">Backup Settings</h4>
+                        <p>Backups are the most important of any CMS, Bloggie CMS handles that with care, configure to take complete Application, Database backup within prescribed days, also you have option to auto delete the old backups after some period time.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium">Sitemap Settings</h4>
+                        <p>Sitemap is the crucial part in SEO, for maintaining a good search rank your site should be indexed properly so this where sitemap comes into play. Configure Sitemap to auto update the sitemap everyday, or every 3 days or a week. We recommened to set it to daily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 6. CMS Tools -->
+        <section id="cms_tools" class="pt-10  clear-left">
+            <h2 class="text-3xl font-semibold">6. CMS Tools</h2>
+            <p class="pt-5 prose text-lg tracking-wide text-gray-600">Bloggie CMS provides a set of pre-equipped tools that make it easier for website owners and developers to manage and maintain their website. Here are some of the tools included out of the box in cms; <b>Backups, Sitemap & Cache Management</b>.</p>
+            <div class="py-5" id="cms_backups">
+                <h3 class="text-xl font-semibold mb-2">Backups</h3>
+                <img src="./lib/images/cms_backup.jpeg" alt="app_settings" class="w-[45rem] ml-5 object-cover rounded-lg shadow-5 float-right" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p>The backup tool allows website owners to create a backup of their website's database and files. This is useful in case of data loss or website crashes, as the website can be easily restored using the backup files.</p>
+                    <p><b>1. Application Backup: </b>This includes complete application backup, including media, assets and other internal components; To save space on 'node_modules' & 'vendor' folders are excluded as they contains depedencies and can be installed any time you want.</p>
+                    <p><b>2. Database Backup: </b>This includes only database.</p>
+                    <p>The table itself shows currently available backups on disk, you can view the file name, module which is basically type, and size of backup. Also you can manually download the backup file from here; or delete them forever.</p>
+                    <p><b>Note:</b> We recommened you to maintain autobackups of your application, in advanced settings, so you can focus on your writing instead of your data;</p>
+                </div>
+            </div>
+            <div class="py-5 clear-left" id="cms_sitemap">
+                <h3 class="text-xl font-semibold mb-2">Sitemap</h3>
+                <img src="./lib/images/cms_sitemap.jpeg" alt="app_settings" class="w-[45rem] mr-5 object-cover rounded-lg shadow-5 float-left" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p>A sitemap is a file that contains a list of all the pages on a website. Sitemaps help search engines crawl and index websites more efficiently by providing a clear picture of the website's structure and content. Most content management systems (CMS) come with built-in sitemap generation functionality, and Bloggie CMS is no exception.</p>
+                    <p>The sitemap feature in Bloggie CMS generates a sitemap file that can be submitted to search engines such as Google, Bing, and Yahoo. Here are some of the benefits of using the sitemap feature in Bloggie CMS:</p>
+                    <ul> 
+                        <li><b>Improved website indexing: </b>By providing search engines with a complete list of all the pages on your website, the sitemap feature can help ensure that all of your website's pages are indexed by search engines.</li>
+                        <li><b>Faster indexing: </b>Sitemaps help search engines discover new pages on your website more quickly, which can help accelerate the indexing process. Whenever you create a Post or New Page, it will add to the respective sitemap.</li>
+                        <li><b>Better search engine rankings: </b>By making it easier for search engines to crawl and index your website, the sitemap feature can help improve your website's search engine rankings.</li>
+                    </ul>
+                    <p><b>1. Copy the Sitemap URL: </b>As We mentioned one must need to submit the sitemap to Search Engine, check 'Additional Configuration' for more details.</p>
+                    <p><b>2. Download the Sitemap.</b></p>
+                    <p><b>3. Generate or Update your Sitemap.</b></p>
+                </div>
+            </div>
+            <div class="py-5 clear-left" id="cms_cache_management">
+                <h3 class="text-xl font-semibold mb-2">Cache Management</h3>
+                <img src="./lib/images/cms_cache.jpeg" alt="app_settings" class="w-[45rem] ml-5 object-cover rounded-lg shadow-5 float-right" >
+                <div class="mt-5 prose text-lg tracking-wide">
+                    <p>Cache management is a feature in Bloggie CMS that helps improve website performance by caching frequently accessed data or pages. Caching is the process of storing data in a temporary location (cache) to speed up access to that data in the future. The cache management feature in Bloggie CMS allows you to configure and manage the caching of different types of data on your website.</p>
+                    <p>Here are some of the benefits of using the cache management feature in Bloggie CMS:</p>
+                    <ul>
+                        <li><b>Improved website performance: </b>By caching frequently accessed data or pages, the cache management feature can help reduce the load on your website's server and speed up page load times for website visitors.</li>
+                        <li><b>Reduced server load: </b>Caching can help reduce the load on your website's server by serving cached data or pages to website visitors instead of generating that data or page content from scratch every time it is requested.</li>
+                        <li><b>Better user experience: </b>Faster page load times can help improve the user experience for website visitors, leading to higher engagement and conversion rates.</li>
+                        <li><b>Increased scalability: </b>By reducing the load on your website's server, caching can help improve website scalability and allow your website to handle more traffic without slowing down.</li>
+                    </ul>
+                    <p>Bloggie CMS's cache management feature allows you to configure and manage different types of caching, such as <b>'Application Cache', 'Views Cache', 'Routes Cache' & 'Configuration cache'.</b> You can also clear the cache manually or set up automated cache clearing at regular intervals to ensure that your website's cache remains up-to-date.</p>
+                </div>
+            </div>
+        </section>
+        <!-- 7. Additional Configuration -->
+        <section id="additional_configuration" class="mt-5">
+            <h2 class="text-3xl font-semibold">7. Additional Configuration</h2>
+            <p class="pt-5 prose text-lg tracking-wide text-gray-600">In Order to use some features, you need some additional configurations to make it work. This section will guide with those aditional configuration.</p>
+            <div id="additional_google_analytics" class="py-5">
+                <h3 class="text-xl font-semibold mb-2">Google Analytics</h3>
+                <div class="grid grid-cols-2 gap-5 mt-5 prose text-lg tracking-wide">
+                    <div class="flex flex-col items-center justify-between">
+                        <p>&#9679 <span class="pl-3">Head over to <b>Google Developer Console</b>, and select your project if dont have one create a new project.</span></p>
+                        <img src="./lib/images/ga_1.jpeg" alt="google_analytics_config_1" class="shadow-5 rounded-lg object-cover">
+                    </div>
+                    <div class="flex flex-col items-center justify-between">
+                        <p>&#9679 <span class="pl-3">Search for <b>analytics api</b>, inside 'Marketplace' tab select <b>Google Analytics Data API</b>.</span></p>
+                        <img src="./lib/images/ga_2.jpeg" alt="google_analytics_config_2" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Click on <b>Enable</b></span></p>
+                        <img src="./lib/images/ga_3.png" alt="google_analytics_config_3" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Click on <b>"creadentials > '+ create creadentials' > Select Service Account.</b></span></p>
+                        <img src="./lib/images/ga_4.jpeg" alt="google_analytics_config_4" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Give any name <b>you want.</b> Then click countiue.</span></p>
+                        <img src="./lib/images/ga_5.jpeg" alt="google_analytics_config_5" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Now, as same screen before under <b>Service Accounts</b>, you will find the new one you created. Copy the Email and store it will be used later, <b>Click on it.</b></span></p>
+                        <img src="./lib/images/ga_6.jpeg" alt="google_analytics_config_6" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Navigate to <b>"Keys"</b> tab, and click on "Create new key".</span></p>
+                        <img src="./lib/images/ga_7.jpeg" alt="google_analytics_config_7" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Select <b>"JSON"</b> file and click <b>create, the file will be downloaded, Keep it.</b></span></p>
+                        <img src="./lib/images/ga_8.jpeg" alt="google_analytics_config_8" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Head over to <b>Google Analytics</b>, select a account to use or create a new one. Then Click on <b>Admin</b> in sidebar</span></p>
+                        <img src="./lib/images/ga_9.png" alt="google_analytics_config_9" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Go to <b>Propery Settings</b>, Copy Property ID: and save it will be used later.</span></p>
+                        <img src="./lib/images/ga_10.jpeg" alt="google_analytics_config_10" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Go to <b>Propert Access Management</b>, click on + sign and Add Users;</span></p>
+                        <img src="./lib/images/ga_11.jpeg" alt="google_analytics_config_11" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Now paste the email copied from <b>Service Accounts</b> and select Analyst, click on Add. If you didn't copied open the downloaded JSON file in notepad, copy the Email from it.</span></p>
+                        <img src="./lib/images/ga_12.jpeg" alt="google_analytics_config_12" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Go to <b>Data Streams</b>, Click on Add Stream, Web.</span></p>
+                        <img src="./lib/images/ga_13.jpeg" alt="google_analytics_config_13" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Add your <b>Website URL</b>, give it a name, make sure <b>Enhanced measurement</b> is ON. Click Create Stream.</span></p>
+                        <img src="./lib/images/ga_14.jpeg" alt="google_analytics_config_14" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Now Copy the Measurement ID, and store it.</span></p>
+                        <img src="./lib/images/ga_15.jpeg" alt="google_analytics_config_15" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Now, update the <b>Property ID, & Measurement ID</b> with your details, Also Upload the <b>JSON</b> file that you downloaded. Then click on Submit.</span></p>
+                        <img src="./lib/images/ga_bloggie.jpeg" alt="google_analytics_config_16" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                </div>
+            </div>
+            <div id="additional_sitemap" class="py-5">
+                <h3 class="text-xl font-semibold mb-2">Sitemap</h3>
+                <div class="prose text-gray-500 text-lg">
+                    <p>A sitemap is a file that lists all the pages on a website to help search engines crawl and index the content more efficiently. It can include important metadata about each page, such as its priority, frequency of updates, and last modification date.</p>
+                    <p>Creating a sitemap manually can be a time-consuming and error-prone process, especially for large websites with many pages. Bloggie CMS, have built-in functionality to automatically generate sitemaps for users. Bloggie CMS creates a sitemap for the user by scanning the website's content and organizing it into a structured format that can be easily read by search engines. The sitemap is then automatically updated whenever new content is added or existing content is modified. This process ensures that search engines can quickly discover and index all the pages on the website, which can help improve the website's visibility in search engine results pages (SERPs).</p>
+                    <p>Additionally, having a sitemap can help identify any issues with website structure or organization that may be hindering search engine crawling and indexing. In Bloggie CMS, users can access the automatically generated sitemap by navigating to the "Sitemap" section in the admin panel. From here, they can view the sitemap and make any necessary modifications, such as updating metadata or excluding certain pages from being indexed.</p>
+                </div>               
+                <div class="grid grid-cols-2 gap-5 mt-5 prose text-lg tracking-wide">
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Login to Admin, in sidebar under <b>CMS Tools</b>, select Sitemap. Click on Generate, to create a sitemap for your site.</span></p>
+                        <img src="./lib/images/sitemap_1.jpeg" alt="sitemap_1" class="shadow-5 rounded-lg object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Click the blue copy button, to copy the <b>Sitemap URL</b> to clipboard.</span></p>
+                        <img src="./lib/images/sitemap_2.jpeg" alt="sitemap_2" class="shadow-5 rounded-lg object-cover ">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Head over to <b>Google Search Console</b>, login with google Account. In your console, on left side click on <b>select property,</b> then create a new property.</span></p>
+                        <img src="./lib/images/sitemap_3.jpeg" alt="sitemap_3" class="shadow-5 rounded-lg object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Add you site in the <b>Domain</b>, ex: "rcubedev.in", then click continue.</span></p>
+                        <img src="./lib/images/sitemap_4.jpeg" alt="sitemap_4" class="shadow-5 rounded-lg object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">It will ask you to verify domain ownership, it is simple as Google provides simple Instructions, It requires to edit some <b>DNS Records</b>.</span></p>
+                        <img src="./lib/images/sitemap_5.jpeg" alt="sitemap_5" class="shadow-5 rounded-lg object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <p>&#9679 <span class="pl-3">Paste your Sitemap url here, <b>Note:</b> your domain is already added, so simply route to sitemap; i.e if the copied url is <b>"http://www.rcubedev.in/public/sitemap.xml"</b> then add only <b>"public/sitemap.xml"</b>. Now it will start indexing, all data will be available after some time. So use this data, to improve your posts, understand about your audience.</span></p>
+                        <img src="./lib/images/sitemap_6.jpeg" alt="sitemap_6" class="shadow-5 rounded-lg object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="prose text-slate-500 text-sm text-center mx-auto pt-8">&#169; 2023 <b>Bloggie CMS</b>, developed & maintained by <b>R Cube Dev</b> </footer>
+    </main>
+    <!-- Scroll To Top -->
+    <button id="scroll_to_top" class="rounded-full flex items-center p-3 fixed bottom-5 right-5 bg-gradient-to-r from-indigo-500 to-violet-400 shadow-5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18" />
+        </svg>  
+    </button>
+    <!-- Scripts -->
+    <script src="./lib/js/app.js"></script>
+</body>
+</html>
