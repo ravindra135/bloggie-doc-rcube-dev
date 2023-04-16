@@ -187,28 +187,28 @@
                         <li class="ml-3">&#9679 <span class="ml-3">max_execution_time <b>300</b></span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">memory_limit <b>64M</b></span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">post_max_size <b>28M</b></span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">upload_max_filesize <b>12M</b></span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">upload_max_filesize <b>64M</b></span></li>
                     </ul>
                 </div>
                 <div id="local_server">
                     <h3 class="text-xl font-semibold py-4">Local Server</h3>
                     <ul class="prose text-lg tracking-wide">
-                        <li class="ml-3">&#9679 <span class="ml-3">Create a Folder (any name you want), within 'htdocs' directory if you are using XAMMP or 'WWW' directory if you are using WAMP as development server.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Extract the <b>'bloggie_cms_prod.zip'</b>, then copy the contents into the folder you created.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Open up the <b>'.env'</b> file in your text editor (notepad).</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add your domain ex: http://rcube.test , now save it and Exit.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Head towards <b>'phpMyAdmin'</b>, and create a database, after that go to <b>'User Privileges'</b> and create a User with Password, don't go with default <b>root@no-password</b></b></span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Create a Folder (any name you want), inside <b>'htdocs'</b> directory if you are using XAMMP or <b>'WWW'</b> directory if you are using WAMP as development server.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Extract and copy the contents of <b>'bloggie_cms_prod.zip'</b>, into the newly created folder</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Open up the <b>'.env'</b> file in your text editor (notepad, notepad++, etc).</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add to your domain like, <b>http://rcube.test</b>, now save it and Exit.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Head towards <b>'phpMyAdmin'</b>, and create a database, after that go to <b>'User Privileges'</b> tab and create a User with Password, don't use default user or password like, <b>root@no-password</b></span></li>
                     </ul>
                 </div>
                 <div id="live_server">
                     <h3 class="text-xl font-semibold py-4">Live Server</h3>
                     <ul class="prose text-lg tracking-wide">
-                        <li class="ml-3">&#9679 <span class="ml-3">Go the 'CPanel' of your Hosting Provider.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Use 'File Manager' and go to <b>public_html</b> directory.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Upload all the contents of <b>'bloggie_cms_prod.zip'</b>, in the 'public_html' directory.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Open up the <b>'.env'</b> file, if you cannot find .env files, it is dot files are hidden for security reasons. Check with your Hosting Provider to Unhide '.' (dot) files.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add your domain ex: https://rcube.dev/ . If SSL is not configured use http://. save and exit file manager.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Create a Database using <b>phpMyAdmin</b>, provided in CPanel.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Use <b>File Manager or File Explorer tool</b>, provided in <b>CPanel</b> by your hosting provider.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Locate the root directory, it is the main directory used as entry point for your website. It is typically named <b>public_html, www, htdocs, or similar.</b></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Upload all the contents of <b>'bloggie_cms_prod.zip'</b>, into the <b>'public_html'</b> directory.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Open the <b>'.env'</b> file, if you can't find .env files, those might be hidden, as dot files are by hidden by default for security reasons. There will be a setting to unhide/show the hidden files, check with your hosting provider.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add your domain ex: <b>https://www.rcube.in</b>. If SSL is not configured use http:// save and exit file manager.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Create a Database using <b>phpMyAdmin</b>, provided in CPanel. Take a note of database name, username, and password. <b>Note:</b> For most of the hosting provider host and port are the same, i.e localhost & 3306.</span></li>
                     </ul>
                     <p class="pt-5 prose text-lg tracking-wide text-gray-600"><b>Note:</b> You can also upload files to live server using any of the <b>FTP Client</b> like FileZilla.</p>
                 </div>
@@ -334,7 +334,7 @@
                         <p>Check Comments, on which post you got comments and by whom. Also, you can approve or disapprove comments. </p>
                     </div>
                 </div>
-                <div class="py-5 relative" id="admin_file_manager">
+                <div class="py-5" id="admin_file_manager">
                     <h3 class="text-xl font-semibold mb-2">File Manager</h3>
                     <img src="./lib/images/file_manager.png" alt="file_manager" class="object-cover rounded-lg shadow-5 w-[45rem] xl:float-left xl:mr-5 xl:mb-5" >
                     <div class="mt-5 prose text-lg tracking-wide xl:clear-right">
