@@ -194,9 +194,9 @@
                     <h3 class="text-xl font-semibold py-4">Local Server</h3>
                     <ul class="prose text-lg tracking-wide">
                         <li class="ml-3">&#9679 <span class="ml-3">Create a Folder (any name you want), inside <b>'htdocs'</b> directory if you are using XAMMP or <b>'WWW'</b> directory if you are using WAMP as development server.</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Extract and copy the contents of <b>'bloggie_cms_prod.zip'</b>, into the newly created folder</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Open up the <b>'.env'</b> file in your text editor (notepad, notepad++, etc).</span></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add to your domain like, <b>http://rcube.test</b>, now save it and Exit.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Unzip the archive and find <b>Upload folder</b>. Copy the contents inside of it, to the folder you created in your XAMPP or WAMP server.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Inside of your application, Open up the <b>'.env'</b> file in your text editor (notepad, notepad++, etc).</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add to your domain like, <b>http://rcube.test</b>, now save it and Exit. Incase you didn't configured any site via <b>VHosts</b>, then it should be <b>http://localhost/{Name of your Application folder}</b></span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">Head towards <b>'phpMyAdmin'</b>, and create a database, after that go to <b>'User Privileges'</b> tab and create a User with Password, don't use default user or password like, <b>root@no-password</b></span></li>
                     </ul>
                 </div>
@@ -205,7 +205,7 @@
                     <ul class="prose text-lg tracking-wide">
                         <li class="ml-3">&#9679 <span class="ml-3">Use <b>File Manager or File Explorer tool</b>, provided in <b>CPanel</b> by your hosting provider.</span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">Locate the root directory, it is the main directory used as entry point for your website. It is typically named <b>public_html, www, htdocs, or similar.</b></li>
-                        <li class="ml-3">&#9679 <span class="ml-3">Upload all the contents of <b>'bloggie_cms_prod.zip'</b>, into the <b>'public_html'</b> directory.</span></li>
+                        <li class="ml-3">&#9679 <span class="ml-3">Unzip the archive and find <b>Upload folder,</b> now transfer all the files and folder inside of it, to the 'public_html' folder. You can upload these files to your server via FTP or simply create a zip archive of all the contents of <b>Upload</b> folder and upload it live server, extract the archive in the root of the <b>public_html</b>.</span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">Open the <b>'.env'</b> file, if you can't find .env files, those might be hidden, as dot files are by hidden by default for security reasons. There will be a setting to unhide/show the hidden files, check with your hosting provider.</span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">Change the <b>'APP_URL='</b> value, add your domain ex: <b>https://www.rcube.in</b>. If SSL is not configured use http:// save and exit file manager.</span></li>
                         <li class="ml-3">&#9679 <span class="ml-3">Create a Database using <b>phpMyAdmin</b>, provided in CPanel. Take a note of database name, username, and password. <b>Note:</b> For most of the hosting provider host and port are the same, i.e localhost & 3306.</span></li>
