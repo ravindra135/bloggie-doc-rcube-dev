@@ -132,6 +132,7 @@
                     <ul class="ml-8 py-2 text-gray-100 tracking-wider" hidden>
                         <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#additional_google_analytics">Google Analytics</a></li>
                         <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#additional_sitemap">Sitemap</a></li>
+                        <li class="pl-3 border-l-2 border-l-white my-1.5 py-1 text-sm font-medium basic-transition hover:bg-white hover:bg-opacity-20 cursor pointer"><a href="#cron_job">CRON Job (Task Scheduler)</a></li>
                     </ul>
                 </div>
             </aside>
@@ -577,6 +578,38 @@
                             <p>&#9679 <span class="pl-3">Paste your Sitemap url here, <b>Note:</b> your domain is already added, so simply route to sitemap; i.e if the copied url is <b class="break-words">"http://www.rcubedev.in/public/sitemap.xml"</b> then add only <b>"public/sitemap.xml"</b>. Now it will start indexing, all data will be available after some time. So use this data, to improve your posts, understand about your audience.</span></p>
                             <img src="./lib/images/sitemap_6.jpeg" alt="sitemap_6" class="shadow-5 rounded-lg object-cover">
                         </div>
+                    </div>
+                </div>
+                <!-- CRON JOB -->
+                <div id="cron_job" class="py-5">
+                    <h3 class="text-xl font-semibold mb-2">CRON Job (Scheduled Tasks)</h3>
+                    <div class="prose text-gray-500 text-lg">
+                        <p>A cron job is a task scheduler in Unix-like systems that run shell commands at certain intervals. It is a key concept in Laravel and is used to run administrative tasks periodically on the server, such as sending emails or cleaning cache in file system.</p>
+                        <p>Laravel's Task scheduler is used to define the tasks that need to be run periodically. The tasks are defined inside the schedule mehtod of the Kernal class, and we can add as many Artisan commands as we need by using command method.</p>
+                        <p>However, All Task Schedule time can be controlled from admin panel it self. So, you don't have to worry about. Before Laravel could starts its Scheduler, We need to configure cron job on our server via cpnal of hosting. Here, I am going to show you with my hosting server (Hostinger), as your might be different in options, kindly check that with your Hostinger Provider.</p>
+                    </div>
+                    <div class="grid gap-5 prose mt-5 text-lg tracking-wide">
+                        <div class="flex flex-col justify-between">
+                            <p>&#9679 <span class="pl-3">Login to your Hosting Provider, Here I am using Hostinger as my provider; check with hosting provider on how to setup Cron job, in most cases it will be same.</span></p>
+                            <img src="./lib/images/hostinger_ui.jpeg" alt="Hostinger_1" class="shadow-5 rounded-lg object-cover">
+                        </div>
+                        <div class="">
+                            <p>&#9679 <span class="pl-3">Under Advacned Tab; Select <b>Cron Job</b></span></p>
+                            <img src="./lib/images/hostinger_advanced_tab.jpeg" alt="Hostinger_Advanced" class="shadow-5 rounded-lg h-24 object-cover">
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <p>&#9679 <span class="pl-3">In Hostinger, here you can create a new cron job on server. Type, Command which will run, Command Options to schedule the command to run it weekly or monthyl or daily; Or you can use minutes, hours, day and weekdays to run scheduler.</span></p>
+                            <img src="./lib/images/cron_job_ui.jpeg" alt="cron_job_ui" class="shadow-5 rounded-lg object-cover">
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <p>&#9679 <span class="pl-3">Type: <b>PHP</b>, Command To Run <b>Set Path to Artisan file, it is in the root of the application</b>, mostly path to your <b>public_html</b>, incase if you are using subdomain, <b>public_html/subdomain_folder</b>. After the artisan path, the command should be <b>schedule:run</b>. This will call Laravel Scheduler to Run. Leave Command Options as it is, Then set minutes, hours, days, weekdays to <b>every day or *</b>. This is run the <b>schedule:run command every minute.</b>. Now just save it.</span></p>
+                            <img src="./lib/images/create_cron_job.jpeg" alt="create_cron_job" class="shadow-5 rounded-lg object-cover">
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <p>&#9679 <span class="pl-3">List of active <b>CRON Jobs</b> on server, you can check the output log, for errors or delete the current cron job.</span></p>
+                            <img src="./lib/images/cron_job_activity.jpeg" alt="cron_job_activity" class="shadow-5 rounded-lg object-cover">
+                        </div>
+                        <p class="font-semibold">Note: Whenever the scheduled commands fail, Bloggie CMS is configured to send an e-mail to the administrator. So it is important to setup <b>SMTP Configuration in Advanced Settings & Admin Email in App Settings.</b></p>
                     </div>
                 </div>
             </section>
